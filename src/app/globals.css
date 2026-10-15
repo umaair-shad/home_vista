@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #087443;
+  --color-primary-hover: #065e36;
+  --color-primary-dark: #062f2b;
+  --color-primary-light: #e6f4ea;
+
+  --color-brand-green: #087443;
+  --color-brand-green-hover: #065e36;
+  --color-brand-dark: #062f2b;
+  --color-brand-footer: #071f1c;
+  --color-brand-surface: #f8faf9;
+
+  --color-section-dark: #062f2b;
+  --color-section-footer: #071f1c;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #172522;
+
+  /* Primary Brand Green Palette (Theme Variables) */
+  --primary: #087443;
+  --primary-hover: #065e36;
+  --primary-dark: #062f2b;
+  --primary-light: #e6f4ea;
+
+  /* Brand Accents & Surfaces */
+  --brand-green: #087443;
+  --brand-green-hover: #065e36;
+  --brand-dark: #062f2b;
+  --brand-footer: #071f1c;
+  --brand-surface: #f8faf9;
+
+  /* Section backgrounds */
+  --section-dark: #062f2b;
+  --section-footer: #071f1c;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar and smooth transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================================
+   GLOBAL CSS VARIABLE MAPPINGS
+   Instead of manually editing dozens of individual files,
+   all legacy dark/black classes (#232E38, #182128, #141A20)
+   are globally mapped to the central theme CSS variables.
+   Changing --primary or --brand-dark above updates every
+   button, tab, badge, and section across the entire site.
+   ======================================================== */
+
+/* Backgrounds */
+.bg-\[\#232E38\],
+.bg-\[\#182128\],
+.bg-\[\#141A20\] {
+  background-color: var(--primary) !important;
+}
+
+.hover\:bg-\[\#232E38\]:hover,
+.hover\:bg-\[\#182128\]:hover,
+.hover\:bg-\[\#141A20\]:hover {
+  background-color: var(--primary-hover) !important;
+}
+
+/* Text Colors */
+.text-\[\#232E38\],
+.text-\[\#182128\],
+.text-\[\#141A20\] {
+  color: var(--primary) !important;
+}
+
+.hover\:text-\[\#232E38\]:hover,
+.hover\:text-\[\#141A20\]:hover {
+  color: var(--primary-hover) !important;
+}
+
+/* Borders */
+.border-\[\#232E38\],
+.border-\[\#182128\] {
+  border-color: var(--primary) !important;
+}
+
+.hover\:border-\[\#232E38\]:hover {
+  border-color: var(--primary-hover) !important;
+}
+
+/* Focus Rings */
+.ring-\[\#232E38\],
+.ring-\[\#232E38\]\/20,
+.ring-\[\#232E38\]\/40 {
+  --tw-ring-color: var(--primary) !important;
+}
+
+/* Gradients: convert legacy black start into brand dark emerald */
+.from-\[\#182128\] {
+  --tw-gradient-from: var(--brand-dark) var(--tw-gradient-from-position, 0%) !important;
+  --tw-gradient-to: rgb(6 47 43 / 0) var(--tw-gradient-to-position, 100%) !important;
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position, to bottom right), var(--tw-gradient-from) var(--tw-gradient-from-position, 0%), var(--tw-gradient-to) var(--tw-gradient-to-position, 100%)) !important;
+}
+
