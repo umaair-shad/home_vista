@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import { AGENTS } from '@/data/mockData';
-import { ChevronRight, Star, Phone, Mail, Award, Search, ShieldCheck } from 'lucide-react';
+import { Star, Phone, Mail, Award, Search, ShieldCheck } from 'lucide-react';
 
 export default function AgentsPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,21 +26,12 @@ export default function AgentsPage() {
 
   return (
     <AppLayout>
-      <div className="bg-gray-50 border-b border-gray-100 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-            <Link href="/" className="hover:text-[#232E38]">Home</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-semibold">Agents Directory</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#172522] tracking-tight">
-            Our Elite Real Estate Advisors
-          </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-2 max-w-2xl">
-            Connect with certified, client-rated brokers committed to white-glove negotiation, market intelligence, and fiduciary transparency.
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        badge="Certified Advisors"
+        title="Our Elite Real Estate Advisors"
+        subtitle="Connect with certified, client-rated brokers committed to white-glove negotiation, market intelligence, and fiduciary transparency."
+        breadcrumbs={[{ label: 'Agents Directory' }]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Search & Filter Bar */}

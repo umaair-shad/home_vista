@@ -1,28 +1,18 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { AppLayout } from '@/components/AppLayout';
-import { ChevronRight } from 'lucide-react';
+import { PageHeader } from '@/components/PageHeader';
 
 export default function PrivacyPolicyPage() {
   return (
     <AppLayout>
-      <div className="bg-gray-50 border-b border-gray-100 py-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-            <Link href="/" className="hover:text-[#232E38]">Home</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-semibold">Privacy Policy</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#172522] tracking-tight">
-            Privacy Policy
-          </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-2">
-            Last Updated: October 15, 2026 &bull; Effective Immediately
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        badge="Data Governance"
+        title="Privacy Policy & Security"
+        subtitle="Last Updated: October 15, 2026 • Discover how we collect, verify, and protect your information."
+        breadcrumbs={[{ label: 'Privacy Policy' }]}
+      />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 prose prose-emerald max-w-none text-xs sm:text-sm text-gray-700 leading-relaxed space-y-6">
         <p>

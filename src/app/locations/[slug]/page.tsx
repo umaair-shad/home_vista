@@ -47,7 +47,7 @@ export default function LocationDetailPage() {
             <span>{location.name}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
             {location.name}, {location.state}
           </h1>
           <p className="text-xs sm:text-sm text-gray-200 mt-2 max-w-xl">

@@ -4,27 +4,19 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import { LOCATIONS } from '@/data/mockData';
-import { ChevronRight, MapPin, ArrowRight } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
 
 export default function LocationsPage() {
   return (
     <AppLayout>
-      <div className="bg-gray-50 border-b border-gray-100 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-            <Link href="/" className="hover:text-[#232E38]">Home</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-semibold">Locations</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#172522] tracking-tight">
-            Premier Real Estate Destinations
-          </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-2 max-w-2xl">
-            Explore verified homes across America&apos;s most dynamic cities and scenic coastal enclaves.
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        badge="Prime Destinations"
+        title="Premier Real Estate Destinations"
+        subtitle="Explore verified homes across America's most dynamic cities, scenic coastal enclaves, and mountain retreats."
+        breadcrumbs={[{ label: 'Locations' }]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

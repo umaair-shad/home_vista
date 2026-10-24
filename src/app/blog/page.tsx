@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import { ARTICLES } from '@/data/mockData';
-import { ChevronRight, Calendar, Clock, Search, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, Search, ArrowRight } from 'lucide-react';
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -26,21 +27,12 @@ export default function BlogPage() {
 
   return (
     <AppLayout>
-      <div className="bg-gray-50 border-b border-gray-100 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-            <Link href="/" className="hover:text-[#232E38]">Home</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-semibold">Real Estate Blog</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#172522] tracking-tight">
-            Market Insights & Real Estate Journal
-          </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-2 max-w-2xl">
-            Thought leadership, design innovation, investment strategy, and home buying guides authored by our licensed experts.
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        badge="Market Intelligence"
+        title="Market Insights & Real Estate Journal"
+        subtitle="Thought leadership, design innovation, investment strategy, and home buying guides authored by our licensed experts."
+        breadcrumbs={[{ label: 'Real Estate Blog' }]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Featured Hero Article */}

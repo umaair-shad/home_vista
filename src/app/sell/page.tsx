@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import {
   ChevronRight,
   Calculator,
@@ -34,28 +35,12 @@ export default function SellPage() {
 
   return (
     <AppLayout>
-      {/* Hero Header */}
-      <div className="hero-gradient-dark py-14 px-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs text-emerald-300 mb-3">
-            <Link href="/" className="hover:underline">Home</Link>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-white font-semibold">Sell Your Property</span>
-          </div>
-
-          <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-              Maximum Value Guarantee
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mt-1 leading-tight">
-              Sell Your Home Faster & for Top Market Dollar
-            </h1>
-            <p className="text-xs sm:text-sm text-gray-200 mt-3 leading-relaxed">
-              Leverage HomeVista nationwide buyer network, bespoke 3D virtual staging, and dedicated elite broker representation.
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        badge="Maximum Value Guarantee"
+        title="Sell Your Home Faster & for Top Market Dollar"
+        subtitle="Leverage HomeVista nationwide buyer network, bespoke 3D virtual staging, and dedicated elite broker representation."
+        breadcrumbs={[{ label: 'Sell Your Property' }]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Instant Home Valuation Estimator Tool */}

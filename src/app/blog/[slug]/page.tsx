@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useParams, notFound } from 'next/navigation';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import { ARTICLES } from '@/data/mockData';
 import { ChevronRight, Calendar, Clock, Share2, ArrowLeft } from 'lucide-react';
 
@@ -22,27 +23,18 @@ export default function ArticleDetailPage() {
 
   return (
     <AppLayout>
-      <div className="bg-gray-50 border-b border-gray-100 py-4">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-2 text-xs text-gray-500">
-            <Link href="/" className="hover:text-[#232E38]">Home</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <Link href="/blog" className="hover:text-[#232E38]">Blog</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-semibold truncate max-w-xs">{article.title}</span>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        badge={article.category}
+        title={article.title}
+        subtitle={`Authored by ${article.author.name} • ${article.date} • ${article.readTime} read`}
+        breadcrumbs={[
+          { label: 'Blog', href: '/blog' },
+          { label: article.title }
+        ]}
+      />
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
-        {/* Category & Title */}
         <div className="mb-6">
-          <span className="bg-green-50 text-[#232E38] font-bold text-xs px-3 py-1 rounded-full border border-green-200">
-            {article.category}
-          </span>
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-[#172522] tracking-tight mt-3 leading-tight">
-            {article.title}
-          </h1>
 
           {/* Author info row */}
           <div className="flex items-center justify-between pt-4 mt-4 border-t border-gray-100 text-xs text-gray-500">

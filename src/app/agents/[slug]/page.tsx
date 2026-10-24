@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useParams, notFound } from 'next/navigation';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import { PropertyCard } from '@/components/PropertyCard';
 import { AGENTS, ALL_PROPERTIES } from '@/data/mockData';
 import {
@@ -47,18 +48,15 @@ export default function AgentProfilePage() {
 
   return (
     <AppLayout>
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-100 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs text-gray-500">
-            <Link href="/" className="hover:text-[#232E38]">Home</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <Link href="/agents" className="hover:text-[#232E38]">Agents</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-semibold">{agent.name}</span>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        badge="Certified Broker Advisor"
+        title={agent.name}
+        subtitle={`${agent.title} • ${agent.agency} • ${agent.experienceYears} Years Experience • ${agent.propertiesCount} Active Listings`}
+        breadcrumbs={[
+          { label: 'Agents', href: '/agents' },
+          { label: agent.name }
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import {
-  ChevronRight,
   Mail,
   Phone,
   MapPin,
@@ -32,21 +32,12 @@ export default function ContactPage() {
 
   return (
     <AppLayout>
-      <div className="bg-gray-50 border-b border-gray-100 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-            <Link href="/" className="hover:text-[#232E38]">Home</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-semibold">Contact Us</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#172522] tracking-tight">
-            Connect with HomeVista
-          </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-2 max-w-2xl">
-            Our concierge advisors and certified brokers are available 7 days a week to answer your inquiries.
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        badge="Direct Support & Advisory"
+        title="Connect with HomeVista"
+        subtitle="Our concierge advisors and certified brokers are available 7 days a week to assist with viewings, listings, and settlement."
+        breadcrumbs={[{ label: 'Contact Us' }]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">

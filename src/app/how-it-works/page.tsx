@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import {
-  ChevronRight,
   Search,
   CalendarCheck,
   ShieldCheck,
@@ -19,49 +19,46 @@ export default function HowItWorksPage() {
 
   return (
     <AppLayout>
-      <div className="bg-gray-50 border-b border-gray-100 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-            <Link href="/" className="hover:text-[#232E38]">Home</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-semibold">How It Works</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#172522] tracking-tight">
-            How HomeVista Works
-          </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-2 max-w-2xl">
-            A transparent, modern platform engineered to eliminate friction from real estate transactions.
-          </p>
-
-          {/* Role Switcher Tabs */}
-          <div className="inline-flex p-1 bg-white border border-gray-200 rounded-xl shadow-xs mt-6 text-xs font-semibold">
-            <button
-              onClick={() => setActiveTab('buyers')}
-              className={`px-5 py-2.5 rounded-lg transition-all ${
-                activeTab === 'buyers' ? 'bg-[#232E38] text-white shadow-xs' : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              For Property Buyers
-            </button>
-            <button
-              onClick={() => setActiveTab('renters')}
-              className={`px-5 py-2.5 rounded-lg transition-all ${
-                activeTab === 'renters' ? 'bg-[#232E38] text-white shadow-xs' : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              For Tenants & Renters
-            </button>
-            <button
-              onClick={() => setActiveTab('sellers')}
-              className={`px-5 py-2.5 rounded-lg transition-all ${
-                activeTab === 'sellers' ? 'bg-[#232E38] text-white shadow-xs' : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              For Property Sellers
-            </button>
-          </div>
+      <PageHeader
+        badge="The HomeVista Advantage"
+        title="How HomeVista Works"
+        subtitle="A transparent, modern platform engineered to eliminate friction from real estate transactions with licensed escrow security."
+        breadcrumbs={[{ label: 'How It Works' }]}
+      >
+        {/* Role Switcher Tabs */}
+        <div className="inline-flex p-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-xs text-xs font-semibold">
+          <button
+            onClick={() => setActiveTab('buyers')}
+            className={`px-4 py-2 rounded-lg transition-all cursor-pointer ${
+              activeTab === 'buyers'
+                ? 'bg-white text-[#071F1C] font-bold shadow-sm'
+                : 'text-gray-200 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            For Buyers
+          </button>
+          <button
+            onClick={() => setActiveTab('renters')}
+            className={`px-4 py-2 rounded-lg transition-all cursor-pointer ${
+              activeTab === 'renters'
+                ? 'bg-white text-[#071F1C] font-bold shadow-sm'
+                : 'text-gray-200 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            For Renters
+          </button>
+          <button
+            onClick={() => setActiveTab('sellers')}
+            className={`px-4 py-2 rounded-lg transition-all cursor-pointer ${
+              activeTab === 'sellers'
+                ? 'bg-white text-[#071F1C] font-bold shadow-sm'
+                : 'text-gray-200 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            For Sellers
+          </button>
         </div>
-      </div>
+      </PageHeader>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         {activeTab === 'buyers' && (

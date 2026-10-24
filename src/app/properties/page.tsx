@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import { PropertyCard } from '@/components/PropertyCard';
 import { ALL_PROPERTIES } from '@/data/mockData';
 import { PropertyItem } from '@/types';
@@ -149,50 +150,34 @@ function PropertiesContent() {
 
   return (
     <AppLayout>
-      {/* Breadcrumb Header */}
-      <div className="bg-gray-50 border-b border-gray-100 py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-            <Link href="/" className="hover:text-[#232E38] transition-colors">Home</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-semibold">Properties</span>
-            {initialLifestyle && (
-              <>
-                <ChevronRight className="w-3 h-3 text-gray-400" />
-                <span className="text-[#232E38] font-semibold">{initialLifestyle}</span>
-              </>
-            )}
-          </div>
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-[#172522] tracking-tight">
-                {initialLifestyle ? `${initialLifestyle} Collection` : 'All Verified Properties'}
-              </h1>
-              <p className="text-xs sm:text-sm text-gray-500 mt-1">
-                Showing {filteredProperties.length} verified listings across top destinations
-              </p>
-            </div>
-
-            {/* Sale / Rent Switcher Pills */}
-            <div className="inline-flex items-center p-1 bg-white border border-gray-200 rounded-xl shadow-sm text-xs font-semibold">
-              {['All', 'Sale', 'Rent'].map((tab) => (
-                <button
-                  key={tab}
-                  type="button"
-                  onClick={() => setSelectedPurpose(tab)}
-                  className={`px-4 py-2 rounded-lg transition-all ${
-                    selectedPurpose.toLowerCase() === tab.toLowerCase()
-                      ? 'bg-[#232E38] text-white shadow-sm'
-                      : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  {tab === 'All' ? 'All Types' : tab === 'Sale' ? 'For Sale' : 'For Rent'}
-                </button>
-              ))}
-            </div>
-          </div>
+      <PageHeader
+        badge="Curated Portfolio"
+        title={initialLifestyle ? `${initialLifestyle} Collection` : 'All Verified Properties'}
+        subtitle={`Showing ${filteredProperties.length} verified listings across America's top real estate destinations.`}
+        breadcrumbs={
+          initialLifestyle
+            ? [{ label: 'Properties', href: '/properties' }, { label: initialLifestyle }]
+            : [{ label: 'Properties' }]
+        }
+      >
+        {/* Sale / Rent Switcher Pills */}
+        <div className="inline-flex items-center p-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-sm text-xs font-semibold">
+          {['All', 'Sale', 'Rent'].map((tab) => (
+            <button
+              key={tab}
+              type="button"
+              onClick={() => setSelectedPurpose(tab)}
+              className={`px-4 py-2 rounded-lg transition-all cursor-pointer ${
+                selectedPurpose.toLowerCase() === tab.toLowerCase()
+                  ? 'bg-white text-[#071F1C] font-bold shadow-sm'
+                  : 'text-gray-200 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              {tab === 'All' ? 'All Types' : tab === 'Sale' ? 'For Sale' : 'For Rent'}
+            </button>
+          ))}
         </div>
-      </div>
+      </PageHeader>
 
       {/* Main Content Layout with Sidebar Filters */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

@@ -3,8 +3,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import { FAQS } from '@/data/mockData';
-import { ChevronRight, ChevronDown, Search, HelpCircle, MessageSquare } from 'lucide-react';
+import { ChevronDown, Search, HelpCircle, MessageSquare } from 'lucide-react';
 
 export default function FAQPage() {
   const [search, setSearch] = useState('');
@@ -23,33 +24,23 @@ export default function FAQPage() {
 
   return (
     <AppLayout>
-      <div className="bg-gray-50 border-b border-gray-100 py-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-            <Link href="/" className="hover:text-[#232E38]">Home</Link>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-semibold">Help & FAQ</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#172522] tracking-tight">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-2">
-            Find immediate answers regarding HomeVista verification standards, booking tours, financing pre-approval, and listing procedures.
-          </p>
-
-          {/* Search Input */}
-          <div className="relative mt-6">
-            <input
-              type="text"
-              placeholder="Search questions or keywords (e.g. tour, escrow, fees)..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full text-xs sm:text-sm border border-gray-200 rounded-2xl p-3.5 pl-10 bg-white shadow-xs focus:outline-none focus:border-[#232E38]"
-            />
-            <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-4" />
-          </div>
+      <PageHeader
+        badge="Knowledge Base"
+        title="Frequently Asked Questions"
+        subtitle="Find immediate answers regarding HomeVista verification standards, booking tours, financing pre-approval, and listing procedures."
+        breadcrumbs={[{ label: 'Help & FAQ' }]}
+      >
+        <div className="relative w-full sm:w-80">
+          <input
+            type="text"
+            placeholder="Search questions or keywords..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full text-xs border border-white/20 rounded-xl p-3 pl-9 bg-white/10 text-white placeholder-gray-300 backdrop-blur-md shadow-xs focus:outline-none focus:bg-white/20"
+          />
+          <Search className="w-4 h-4 text-emerald-300 absolute left-3 top-3.5" />
         </div>
-      </div>
+      </PageHeader>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
         {/* Category Pills */}

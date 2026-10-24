@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import { PropertyCard } from '@/components/PropertyCard';
 import { ALL_PROPERTIES } from '@/data/mockData';
 import { ChevronRight, Key, Sparkles } from 'lucide-react';
@@ -30,28 +31,12 @@ export default function RentPage() {
 
   return (
     <AppLayout>
-      {/* Hero Header */}
-      <div className="hero-gradient-dark py-12 px-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs text-emerald-300 mb-3">
-            <Link href="/" className="hover:underline">Home</Link>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-white font-semibold">Properties for Rent</span>
-          </div>
-
-          <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-              Verified Rentals
-            </span>
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-1">
-              Premium Apartments & Rental Homes
-            </h1>
-            <p className="text-xs sm:text-sm text-gray-200 mt-2 leading-relaxed">
-              Find move-in ready luxury apartments, brownstones, and suburban rental townhouses with honest landlord verification and digital lease agreements.
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        badge="Verified Rentals"
+        title="Premium Apartments & Rental Homes"
+        subtitle="Find move-in ready luxury apartments, brownstones, and suburban rental townhouses with honest landlord verification and digital lease agreements."
+        breadcrumbs={[{ label: 'Properties for Rent' }]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Filter Bar */}
