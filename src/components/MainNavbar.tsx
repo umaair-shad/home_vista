@@ -41,9 +41,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             <div className="relative py-2">
               <Link
                 href="/"
-                className={`flex items-center gap-1 transition-colors ${
-                  isCurrent('/') ? 'text-[#087443] font-semibold' : 'hover:text-[#087443]'
-                }`}
+                className={`flex items-center gap-1 transition-colors ${isCurrent('/') ? 'text-[#087443] font-semibold' : 'hover:text-[#087443]'
+                  }`}
               >
                 Home
               </Link>
@@ -55,84 +54,34 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             {/* Buy Dropdown */}
             <div
               className="relative py-2"
-              onMouseEnter={() => setActiveDropdown('buy')}
-              onMouseLeave={() => setActiveDropdown(null)}
             >
               <Link
                 href="/buy"
-                className={`flex items-center gap-1 transition-colors py-1 ${
-                  isCurrent('/buy') ? 'text-[#087443] font-semibold' : 'hover:text-[#087443]'
-                }`}
-                onClick={() => toggleDropdown('buy')}
+                className={`flex items-center gap-1 transition-colors py-1 ${isCurrent('/buy') ? 'text-[#087443] font-semibold' : 'hover:text-[#087443]'
+                  }`}
               >
                 <span>Buy</span>
-                <ChevronDown className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#087443]" />
               </Link>
-
-              {activeDropdown === 'buy' && (
-                <div className="absolute top-full left-0 w-52 bg-white border border-gray-100 rounded-xl shadow-xl py-2 mt-1 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <Link href="/buy?type=Villa" className="block px-4 py-2 hover:bg-emerald-50 hover:text-[#087443] text-xs font-medium">
-                    Villas for Sale
-                  </Link>
-                  <Link href="/buy?type=House" className="block px-4 py-2 hover:bg-emerald-50 hover:text-[#087443] text-xs font-medium">
-                    Family Houses
-                  </Link>
-                  <Link href="/buy?type=Condo" className="block px-4 py-2 hover:bg-emerald-50 hover:text-[#087443] text-xs font-medium">
-                    Downtown Condos
-                  </Link>
-                  <Link href="/buy?type=Land" className="block px-4 py-2 hover:bg-emerald-50 hover:text-[#087443] text-xs font-medium">
-                    Land Parcels
-                  </Link>
-                  <div className="border-t border-gray-100 my-1" />
-                  <Link href="/buy" className="block px-4 py-1.5 text-[11px] font-bold text-[#087443] hover:underline">
-                    All Properties for Sale &rarr;
-                  </Link>
-                </div>
-              )}
             </div>
 
             {/* Rent Dropdown */}
             <div
               className="relative py-2"
-              onMouseEnter={() => setActiveDropdown('rent')}
-              onMouseLeave={() => setActiveDropdown(null)}
             >
               <Link
                 href="/rent"
-                className={`flex items-center gap-1 transition-colors py-1 ${
-                  isCurrent('/rent') ? 'text-[#087443] font-semibold' : 'hover:text-[#087443]'
-                }`}
-                onClick={() => toggleDropdown('rent')}
+                className={`flex items-center gap-1 transition-colors py-1 ${isCurrent('/rent') ? 'text-[#087443] font-semibold' : 'hover:text-[#087443]'
+                  }`}
               >
                 <span>Rent</span>
-                <ChevronDown className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#087443]" />
               </Link>
-
-              {activeDropdown === 'rent' && (
-                <div className="absolute top-full left-0 w-52 bg-white border border-gray-100 rounded-xl shadow-xl py-2 mt-1 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <Link href="/rent?type=Apartment" className="block px-4 py-2 hover:bg-emerald-50 hover:text-[#087443] text-xs font-medium">
-                    Apartments for Rent
-                  </Link>
-                  <Link href="/rent?type=Townhouse" className="block px-4 py-2 hover:bg-emerald-50 hover:text-[#087443] text-xs font-medium">
-                    Townhouses for Rent
-                  </Link>
-                  <Link href="/rent?type=Condo" className="block px-4 py-2 hover:bg-emerald-50 hover:text-[#087443] text-xs font-medium">
-                    Luxury Penthouses
-                  </Link>
-                  <div className="border-t border-gray-100 my-1" />
-                  <Link href="/rent" className="block px-4 py-1.5 text-[11px] font-bold text-[#087443] hover:underline">
-                    All Rental Properties &rarr;
-                  </Link>
-                </div>
-              )}
             </div>
 
             {/* Sell */}
             <Link
               href="/sell"
-              className={`hover:text-[#087443] transition-colors py-2 ${
-                isCurrent('/sell') ? 'text-[#087443] font-semibold' : ''
-              }`}
+              className={`hover:text-[#087443] transition-colors py-2 ${isCurrent('/sell') ? 'text-[#087443] font-semibold' : ''
+                }`}
             >
               Sell
             </Link>
@@ -140,9 +89,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             {/* Agents */}
             <Link
               href="/agents"
-              className={`hover:text-[#087443] transition-colors py-2 ${
-                isCurrent('/agents') ? 'text-[#087443] font-semibold' : ''
-              }`}
+              className={`hover:text-[#087443] transition-colors py-2 ${isCurrent('/agents') ? 'text-[#087443] font-semibold' : ''
+                }`}
             >
               Agents
             </Link>
@@ -194,9 +142,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             {/* Blog */}
             <Link
               href="/blog"
-              className={`hover:text-[#087443] transition-colors py-2 ${
-                isCurrent('/blog') ? 'text-[#087443] font-semibold' : ''
-              }`}
+              className={`hover:text-[#087443] transition-colors py-2 ${isCurrent('/blog') ? 'text-[#087443] font-semibold' : ''
+                }`}
             >
               Blog
             </Link>
@@ -204,9 +151,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             {/* Contact */}
             <Link
               href="/contact"
-              className={`hover:text-[#087443] transition-colors py-2 ${
-                isCurrent('/contact') ? 'text-[#087443] font-semibold' : ''
-              }`}
+              className={`hover:text-[#087443] transition-colors py-2 ${isCurrent('/contact') ? 'text-[#087443] font-semibold' : ''
+                }`}
             >
               Contact
             </Link>

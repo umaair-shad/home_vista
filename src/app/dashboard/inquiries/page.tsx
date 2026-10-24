@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { AppLayout } from '@/components/AppLayout';
-import { DashboardNav } from '@/components/DashboardNav';
+import { PortalLayout } from '@/components/PortalLayout';
 import {
   Inbox,
   Mail,
@@ -84,22 +83,16 @@ export default function DashboardInquiriesPage() {
   };
 
   return (
-    <AppLayout>
-      <div className="bg-gray-50/60 min-h-screen py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Received Inquiries</h1>
-            <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-              Review and answer prospective buyer questions, tour appointments, and direct offers.
-            </p>
-          </div>
+    <PortalLayout portalType="owner" title="Received Inquiries">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Received Inquiries</h1>
+          <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+            Review and answer prospective buyer questions, tour appointments, and direct offers.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-1">
-              <DashboardNav />
-            </div>
-
-            <div className="lg:col-span-3 space-y-4">
+        <div className="space-y-4">
               {feedback && (
                 <div className="p-4 bg-green-50 border border-green-200 text-[#232E38] text-xs font-semibold rounded-xl flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4" />
@@ -213,8 +206,6 @@ export default function DashboardInquiriesPage() {
               ))}
             </div>
           </div>
-        </div>
-      </div>
-    </AppLayout>
-  );
-}
+        </PortalLayout>
+      );
+    }

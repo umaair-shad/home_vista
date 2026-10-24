@@ -6,7 +6,7 @@ import { Search, CalendarCheck, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const STEPS = [
   {
-    number: '01',
+    id: 'discover',
     title: 'Discover & Filter',
     description:
       'Search thousands of broker-verified listings with interactive filters, high-resolution architectural galleries, and market pricing intelligence.',
@@ -14,7 +14,7 @@ const STEPS = [
     highlight: '100% verified properties',
   },
   {
-    number: '02',
+    id: 'tour',
     title: 'Tour with an Expert',
     description:
       'Book instant in-person or live private HD video tours with dedicated local agents who represent your interests without high-pressure sales.',
@@ -22,7 +22,7 @@ const STEPS = [
     highlight: 'Flexible 7-day tour scheduling',
   },
   {
-    number: '03',
+    id: 'close',
     title: 'Close with Confidence',
     description:
       'Navigate escrow, offer negotiations, and title settlement seamlessly with HomeVista transparent closing guidance and legal protections.',
@@ -58,7 +58,7 @@ export const HowItWorksSection: React.FC = () => {
             const Icon = step.icon;
             return (
               <div
-                key={step.number}
+                key={step.id}
                 className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 flex flex-col justify-between hover:bg-white/15 transition-all duration-300"
               >
                 <div>
@@ -66,9 +66,6 @@ export const HowItWorksSection: React.FC = () => {
                     <div className="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center border border-emerald-400/30">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-3xl font-extrabold text-white/20">
-                      {step.number}
-                    </span>
                   </div>
 
                   <h3 className="text-lg font-bold text-white mb-2">

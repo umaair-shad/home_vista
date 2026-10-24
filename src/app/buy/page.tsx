@@ -31,7 +31,7 @@ export default function BuyPage() {
   return (
     <AppLayout>
       {/* Hero Header */}
-      <div className="bg-gradient-to-r from-[#182128] to-[#0A4741] text-white py-12 px-4">
+      <div className="hero-gradient-dark py-12 px-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs text-emerald-300 mb-3">
             <Link href="/" className="hover:underline">Home</Link>

@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { AppLayout } from '@/components/AppLayout';
-import { AccountNav } from '@/components/AccountNav';
+import { PortalLayout } from '@/components/PortalLayout';
 import { Search, Bell, Trash2, ArrowRight } from 'lucide-react';
 
 interface SavedSearch {
@@ -43,22 +42,16 @@ export default function AccountSavedSearchesPage() {
   };
 
   return (
-    <AppLayout>
-      <div className="bg-gray-50/60 min-h-screen py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Saved Searches & Alerts</h1>
-            <p className="text-xs sm:text-sm text-gray-500 mt-1">
-              Get notified immediately when new listings matching your exact criteria hit the market.
-            </p>
-          </div>
+    <PortalLayout portalType="buyer" title="Saved Searches">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Saved Searches & Alerts</h1>
+          <p className="text-xs sm:text-sm text-gray-500 mt-1">
+            Get notified immediately when new listings matching your exact criteria hit the market.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-1">
-              <AccountNav />
-            </div>
-
-            <div className="lg:col-span-3 space-y-6">
+        <div className="space-y-6">
               {searches.length === 0 ? (
                 <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
                   <div className="w-12 h-12 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center mx-auto mb-3">
@@ -124,11 +117,9 @@ export default function AccountSavedSearchesPage() {
                 <p className="text-xs text-emerald-950 leading-relaxed">
                   Our system crawls MLS and private partner databases every 15 minutes. When a property matches your criteria, you will receive an email digest or an SMS alert according to your notification settings.
                 </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-    </AppLayout>
+    </PortalLayout>
   );
 }

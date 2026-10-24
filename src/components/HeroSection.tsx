@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ArrowRight, Play, Home, ChevronDown, X } from 'lucide-react';
+import { ArrowRight, Play, Home, ChevronDown, X, Check } from 'lucide-react';
 import { HERO_AVATARS } from '@/data/mockData';
 
 interface HeroSectionProps {
@@ -159,19 +159,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
             <div className="space-y-3 text-xs sm:text-sm text-gray-600 mb-6">
               <div className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-full bg-green-100 text-[#087443] flex items-center justify-center flex-shrink-0 text-xs font-bold">1</div>
+                <div className="w-5 h-5 rounded-full bg-emerald-100 text-[#087443] flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3 stroke-[3]" />
+                </div>
                 <div>
                   <strong className="text-gray-900">Explore Properties:</strong> Browse thousands of verified listings tailored to your preferences.
                 </div>
               </div>
               <div className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-full bg-green-100 text-[#087443] flex items-center justify-center flex-shrink-0 text-xs font-bold">2</div>
+                <div className="w-5 h-5 rounded-full bg-emerald-100 text-[#087443] flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3 stroke-[3]" />
+                </div>
                 <div>
                   <strong className="text-gray-900">Schedule Tours:</strong> Request private in-person or live video walkthroughs in one click.
                 </div>
               </div>
               <div className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-full bg-green-100 text-[#087443] flex items-center justify-center flex-shrink-0 text-xs font-bold">3</div>
+                <div className="w-5 h-5 rounded-full bg-emerald-100 text-[#087443] flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3 stroke-[3]" />
+                </div>
                 <div>
                   <strong className="text-gray-900">Close With Confidence:</strong> Partner with licensed advisors and complete transparent transactions.
                 </div>

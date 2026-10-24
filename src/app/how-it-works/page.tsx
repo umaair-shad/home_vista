@@ -67,8 +67,8 @@ export default function HowItWorksPage() {
         {activeTab === 'buyers' && (
           <div className="space-y-12">
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#232E38] flex items-center justify-center font-extrabold text-lg flex-shrink-0 border border-green-200">
-                1
+              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#087443] flex items-center justify-center flex-shrink-0 border border-green-200">
+                <Search className="w-6 h-6" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-900">Discover Curated & Verified Inventory</h3>
@@ -79,8 +79,8 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#232E38] flex items-center justify-center font-extrabold text-lg flex-shrink-0 border border-green-200">
-                2
+              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#087443] flex items-center justify-center flex-shrink-0 border border-green-200">
+                <CalendarCheck className="w-6 h-6" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-900">Seamless Tour Scheduling with Elite Brokers</h3>
@@ -91,8 +91,8 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#232E38] flex items-center justify-center font-extrabold text-lg flex-shrink-0 border border-green-200">
-                3
+              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#087443] flex items-center justify-center flex-shrink-0 border border-green-200">
+                <ShieldCheck className="w-6 h-6" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-900">Guaranteed Escrow Protection & Closing Support</h3>
@@ -107,8 +107,8 @@ export default function HowItWorksPage() {
         {activeTab === 'renters' && (
           <div className="space-y-12">
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#232E38] flex items-center justify-center font-extrabold text-lg flex-shrink-0 border border-green-200">
-                1
+              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#087443] flex items-center justify-center flex-shrink-0 border border-green-200">
+                <Key className="w-6 h-6" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-900">Transparent Pricing with Zero Hidden Broker Fees</h3>
@@ -119,8 +119,8 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#232E38] flex items-center justify-center font-extrabold text-lg flex-shrink-0 border border-green-200">
-                2
+              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#087443] flex items-center justify-center flex-shrink-0 border border-green-200">
+                <FileCheck className="w-6 h-6" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-900">Fast-Track Digital Rental Applications</h3>
@@ -135,8 +135,8 @@ export default function HowItWorksPage() {
         {activeTab === 'sellers' && (
           <div className="space-y-12">
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#232E38] flex items-center justify-center font-extrabold text-lg flex-shrink-0 border border-green-200">
-                1
+              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#087443] flex items-center justify-center flex-shrink-0 border border-green-200">
+                <Award className="w-6 h-6" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-900">Comprehensive Pre-Listing Valuation</h3>
@@ -147,8 +147,8 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#232E38] flex items-center justify-center font-extrabold text-lg flex-shrink-0 border border-green-200">
-                2
+              <div className="w-12 h-12 rounded-2xl bg-green-50 text-[#087443] flex items-center justify-center flex-shrink-0 border border-green-200">
+                <ShieldCheck className="w-6 h-6" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-900">Omni-Channel Luxury Syndicate Marketing</h3>

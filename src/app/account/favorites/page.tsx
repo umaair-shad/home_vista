@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { AppLayout } from '@/components/AppLayout';
-import { AccountNav } from '@/components/AccountNav';
+import { PortalLayout } from '@/components/PortalLayout';
 import { mockProperties } from '@/data/mockData';
 import { Trash2, ExternalLink, Bed, Bath, Maximize2, Heart } from 'lucide-react';
 
@@ -16,22 +15,16 @@ export default function AccountFavoritesPage() {
   };
 
   return (
-    <AppLayout>
-      <div className="bg-gray-50/60 min-h-screen py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Saved Properties</h1>
-            <p className="text-xs sm:text-sm text-gray-500 mt-1">
-              Properties you have bookmarked for comparison, updates, and upcoming open houses.
-            </p>
-          </div>
+    <PortalLayout portalType="buyer" title="Saved Properties">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Saved Properties</h1>
+          <p className="text-xs sm:text-sm text-gray-500 mt-1">
+            Properties you have bookmarked for comparison, updates, and upcoming open houses.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-1">
-              <AccountNav />
-            </div>
-
-            <div className="lg:col-span-3">
+        <div>
               {favorites.length === 0 ? (
                 <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
                   <div className="w-12 h-12 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center mx-auto mb-3">
@@ -124,8 +117,6 @@ export default function AccountFavoritesPage() {
               )}
             </div>
           </div>
-        </div>
-      </div>
-    </AppLayout>
-  );
-}
+        </PortalLayout>
+      );
+    }

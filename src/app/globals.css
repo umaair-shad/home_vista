@@ -102,10 +102,16 @@ html {
   --tw-ring-color: var(--primary) !important;
 }
 
-/* Gradients: convert legacy black start into brand dark emerald */
-.from-\[\#182128\] {
-  --tw-gradient-from: var(--brand-dark) var(--tw-gradient-from-position, 0%) !important;
-  --tw-gradient-to: rgb(6 47 43 / 0) var(--tw-gradient-to-position, 100%) !important;
-  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position, to bottom right), var(--tw-gradient-from) var(--tw-gradient-from-position, 0%), var(--tw-gradient-to) var(--tw-gradient-to-position, 100%)) !important;
+/* Premium Dark Emerald Banner & Hero Gradients */
+.hero-gradient-dark {
+  background-color: #062f2b !important;
+  background-image: linear-gradient(135deg, #072622 0%, #064038 50%, #085248 100%) !important;
+  color: #ffffff !important;
+}
+
+.card-gradient-dark {
+  background-color: #062f2b !important;
+  background-image: linear-gradient(135deg, #072622 0%, #083c34 50%, #0a4f44 100%) !important;
+  color: #ffffff !important;
 }
 

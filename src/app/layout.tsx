@@ -17,7 +17,11 @@ export const metadata: Metadata = {
   description: "Explore thousands of verified properties and find a place you'll love to call home.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"

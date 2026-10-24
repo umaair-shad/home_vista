@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { AppLayout } from '@/components/AppLayout';
-import { AccountNav } from '@/components/AccountNav';
+import { PortalLayout } from '@/components/PortalLayout';
 import { MessageSquare, Calendar, CheckCircle2, Clock, MapPin, ArrowRight } from 'lucide-react';
 
 interface Inquiry {
@@ -56,22 +55,16 @@ export default function AccountInquiriesPage() {
   ]);
 
   return (
-    <AppLayout>
-      <div className="bg-gray-50/60 min-h-screen py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Tours & Inquiries</h1>
-            <p className="text-xs sm:text-sm text-gray-500 mt-1">
-              Track your scheduled in-person walkthroughs and direct agent correspondence.
-            </p>
-          </div>
+    <PortalLayout portalType="buyer" title="Inquiries & Tours">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Tours & Inquiries</h1>
+          <p className="text-xs sm:text-sm text-gray-500 mt-1">
+            Track your scheduled in-person walkthroughs and direct agent correspondence.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-1">
-              <AccountNav />
-            </div>
-
-            <div className="lg:col-span-3 space-y-4">
+        <div className="space-y-4">
               {inquiries.map((inq) => (
                 <div
                   key={inq.id}
@@ -141,8 +134,6 @@ export default function AccountInquiriesPage() {
               ))}
             </div>
           </div>
-        </div>
-      </div>
-    </AppLayout>
-  );
-}
+        </PortalLayout>
+      );
+    }

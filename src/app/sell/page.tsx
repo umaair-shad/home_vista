@@ -35,7 +35,7 @@ export default function SellPage() {
   return (
     <AppLayout>
       {/* Hero Header */}
-      <div className="bg-gradient-to-r from-[#182128] via-[#08423D] to-[#0A564F] text-white py-14 px-4">
+      <div className="hero-gradient-dark py-14 px-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs text-emerald-300 mb-3">
             <Link href="/" className="hover:underline">Home</Link>
@@ -152,7 +152,7 @@ export default function SellPage() {
               <div className="mt-6 p-6 bg-green-50/80 border border-green-200 rounded-2xl text-center animate-in fade-in zoom-in-95 duration-200">
                 <span className="text-xs text-gray-500 font-medium">Estimated Home Value Range</span>
                 <div className="text-3xl sm:text-4xl font-extrabold text-[#232E38] my-1">
-                  ${(estimatedValue * 0.96).toLocaleString(undefined, { maximumFractionDigits: 0 })} &ndash; ${(estimatedValue * 1.05).toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                  ${(estimatedValue * 0.96).toLocaleString(undefined, { maximumFractionDigits: 0 })} – ${(estimatedValue * 1.05).toLocaleString(undefined, { maximumFractionDigits: 0 })}
                 </div>
                 <p className="text-xs text-gray-600 max-w-md mx-auto mt-2">
                   Based on current market demand in this zip code. A licensed HomeVista valuation specialist can provide a complimentary on-site appraisal.

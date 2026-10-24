@@ -205,17 +205,29 @@ export const SiteFooter: React.FC = () => {
         </div>
 
         {/* Bottom Copyright & Legal Links */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-3">
-          <div className="flex items-center gap-4">
-            <span>&copy; 2024 HomeVista. All rights reserved.</span>
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <span>&copy; {new Date().getFullYear()} HomeVista. All rights reserved.</span>
             <Link href="/cookies" className="hover:text-emerald-400 transition-colors">
               Cookie Policy
             </Link>
+            <Link href="/privacy-policy" className="hover:text-emerald-400 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-emerald-400 transition-colors">
+              Terms of Service
+            </Link>
           </div>
-          <div className="flex items-center gap-1.5">
-            <span>Designed with</span>
-            <Heart className="w-3.5 h-3.5 fill-red-500 text-red-500" />
-            <span>for your dream home</span>
+          <div className="flex items-center gap-2">
+            <span className="text-gray-400">Design by</span>
+            <a
+              href="https://www.linkedin.com/company/shaddeveloper/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-emerald-400 transition-colors font-medium"
+            >
+              Shad Developers
+            </a>
           </div>
         </div>
       </div>

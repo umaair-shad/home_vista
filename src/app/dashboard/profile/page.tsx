@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { AppLayout } from '@/components/AppLayout';
-import { DashboardNav } from '@/components/DashboardNav';
+import { PortalLayout } from '@/components/PortalLayout';
 import { Building2, Mail, Phone, MapPin, CheckCircle2, ShieldCheck, DollarSign } from 'lucide-react';
 
 export default function DashboardProfilePage() {
@@ -22,23 +21,16 @@ export default function DashboardProfilePage() {
   };
 
   return (
-    <AppLayout>
-      <div className="bg-gray-50/60 min-h-screen py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Owner & Agency Profile</h1>
-            <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-              Manage your verified real-estate organization credentials, representative contacts, and escrow routing.
-            </p>
-          </div>
+    <PortalLayout portalType="owner" title="Owner Profile">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Owner & Agency Profile</h1>
+          <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+            Manage your verified real-estate organization credentials, representative contacts, and escrow routing.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-1">
-              <DashboardNav />
-            </div>
-
-            <div className="lg:col-span-3">
-              <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-xs">
                 {saved && (
                   <div className="mb-6 p-4 bg-green-50 border border-green-200 text-[#232E38] text-xs font-semibold rounded-xl flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 shrink-0" />
@@ -176,7 +168,7 @@ export default function DashboardProfilePage() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="bg-[#232E38] hover:bg-[#141A20] text-white px-6 py-2.5 rounded-xl font-bold text-xs transition-all shadow-sm"
+                      className="bg-[#087443] hover:bg-[#065e36] text-white px-6 py-2.5 rounded-xl font-bold text-xs transition-all shadow-sm"
                     >
                       Save Organization Settings
                     </button>
@@ -184,9 +176,6 @@ export default function DashboardProfilePage() {
                 </form>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </AppLayout>
-  );
-}
+          </PortalLayout>
+        );
+      }

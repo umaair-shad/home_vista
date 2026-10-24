@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Select, { StylesConfig } from 'react-select';
-import { AppLayout } from '@/components/AppLayout';
-import { DashboardNav } from '@/components/DashboardNav';
+import { PortalLayout } from '@/components/PortalLayout';
 import {
   Building2,
   DollarSign,
@@ -114,33 +113,26 @@ export default function NewPropertyPage() {
   };
 
   return (
-    <AppLayout>
-      <div className="bg-gray-50/60 min-h-screen py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-6 flex items-center justify-between">
-            <Link
-              href="/dashboard/properties"
-              className="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-900 font-semibold"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>Back to properties</span>
-            </Link>
-          </div>
+    <PortalLayout portalType="owner" title="Add New Property">
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <Link
+            href="/dashboard/properties"
+            className="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-900 font-semibold"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to properties</span>
+          </Link>
+        </div>
 
-          <div className="mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Add New Property</h1>
-            <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-              Publish a new residential or commercial property listing to HomeVista and partner networks.
-            </p>
-          </div>
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Add New Property</h1>
+          <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+            Publish a new residential or commercial property listing to HomeVista and partner networks.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-1">
-              <DashboardNav />
-            </div>
-
-            <div className="lg:col-span-3">
-              <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-xs">
                 {success && (
                   <div className="mb-6 p-4 bg-green-50 border border-green-200 text-[#232E38] text-xs font-semibold rounded-xl flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 shrink-0" />
@@ -350,7 +342,7 @@ export default function NewPropertyPage() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="px-6 py-2.5 bg-[#232E38] hover:bg-[#141A20] text-white font-bold text-xs rounded-xl flex items-center gap-2 transition-all shadow-md active:scale-95 disabled:opacity-50"
+                      className="px-6 py-2.5 bg-[#087443] hover:bg-[#065e36] text-white font-bold text-xs rounded-xl flex items-center gap-2 transition-all shadow-md active:scale-95 disabled:opacity-50"
                     >
                       <span>{submitting ? 'Publishing...' : 'Publish Listing'}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -359,9 +351,6 @@ export default function NewPropertyPage() {
                 </form>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </AppLayout>
-  );
-}
+          </PortalLayout>
+        );
+      }
